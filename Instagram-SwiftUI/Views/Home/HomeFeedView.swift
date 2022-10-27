@@ -14,8 +14,10 @@ struct HomeFeedView: View {
                 VStack {
                     StoriesView()
                     
-                    ForEach(0...30, id: \.self) { n in
-                        PostView()
+                    ForEach(1...6, id: \.self) { n in
+                        PostView(user: UserModel(username: "therock",
+                                                 imageUser: "person\(n)",
+                                                 imagePost: "feed\(n)"))
                             .padding(.bottom, 20)
                     }
                     
@@ -28,13 +30,19 @@ struct HomeFeedView: View {
 }
 
 struct PostView: View {
+    let user: UserModel
+    
     var body: some View {
         VStack {
-            PostHeaderView()
+            PostHeaderView(user: user)
             
-            // Image
-            Image("foo")
-                .frame(width: 430, height: 430, alignment: .center)
+            // Image post
+            Image(user.imagePost)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 430,
+                       height: 430,
+                       alignment: .center)
                 .background(Color(.secondarySystemBackground))
             
             PostActionButtonsView()
@@ -45,11 +53,12 @@ struct PostView: View {
                     .resizable()
                     .foregroundColor(Color(.red))
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 30, alignment: .center)
+                    .frame(width: 25, height: 25, alignment: .center)
                 
                 Text("32 likes")
                     .font(.system(size: 20))
-                    .foregroundColor(Color(.link))
+                    .bold()
+                    .foregroundColor(Color(.label))
                 
                 Spacer()
             }
@@ -77,22 +86,26 @@ struct PostView: View {
 }
 
 struct PostHeaderView: View {
+    let user: UserModel
     
     var body: some View {
         HStack {
             // User profile picture and username
-            Image(systemName: "person.circle")
+            Image(user.imageUser)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 40, height: 40, alignment: .leading)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 40, height: 40, alignment: .center)
                 .foregroundColor(Color.blue)
+                .cornerRadius(45)
+
             
-            Text("Joseph")
-                .foregroundColor(.blue)
+            Text(user.username)
+                .foregroundColor(Color(.label))
                 .bold()
             
             Spacer()
-        }.padding()
+        }
+        .padding()
     }
 }
 
@@ -127,7 +140,7 @@ struct PostActionButtonsView: View {
             Button {
                 // Like
             } label: {
-                Image(systemName: "square.and.arrow.up")
+                Image(systemName: "paperplane")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 30, height: 30, alignment: .center)
