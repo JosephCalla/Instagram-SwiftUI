@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		72F06A2B290AC43700F766F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F06A2A290AC43700F766F2 /* User.swift */; };
+		72F06A2E290AE63400F766F2 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F06A2D290AE63400F766F2 /* CaptureView.swift */; };
 		72F15A4F2909E051005CDB10 /* HomeFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F15A4E2909E051005CDB10 /* HomeFeedView.swift */; };
 		72F15A512909E068005CDB10 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F15A502909E068005CDB10 /* ExploreView.swift */; };
 		72F15A532909E06D005CDB10 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F15A522909E06D005CDB10 /* CameraView.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		72F06A2A290AC43700F766F2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		72F06A2D290AE63400F766F2 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
 		72F15A4E2909E051005CDB10 /* HomeFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedView.swift; sourceTree = "<group>"; };
 		72F15A502909E068005CDB10 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		72F15A522909E06D005CDB10 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
@@ -55,13 +57,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		72F06A2C290AE61700F766F2 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				72F15A522909E06D005CDB10 /* CameraView.swift */,
+				72F06A2D290AE63400F766F2 /* CaptureView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		72F15A4D2909E028005CDB10 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				72F15A592909EDB5005CDB10 /* Home */,
 				72F3342E290990C9004C764A /* ContentView.swift */,
 				72F15A502909E068005CDB10 /* ExploreView.swift */,
-				72F15A522909E06D005CDB10 /* CameraView.swift */,
+				72F06A2C290AE61700F766F2 /* Camera */,
 				72F15A542909E07D005CDB10 /* NotificationView.swift */,
 				72F15A562909E08E005CDB10 /* ProfileView.swift */,
 			);
@@ -193,6 +204,7 @@
 				72F15A4F2909E051005CDB10 /* HomeFeedView.swift in Sources */,
 				72F15A572909E08E005CDB10 /* ProfileView.swift in Sources */,
 				72F15A552909E07D005CDB10 /* NotificationView.swift in Sources */,
+				72F06A2E290AE63400F766F2 /* CaptureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
